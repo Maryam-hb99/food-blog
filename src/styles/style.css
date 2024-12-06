@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the height is always full */
+  display: flex;
+  flex-direction: column; /* Makes content stack vertically */
+}
+body {
+    background-position: 50%;
+    color: white;
+
+}
+
+#app {
+  flex: 1; /* Ensures the app grows to fill the available space */
+}
+.custom-padding {
+    padding-right: 8rem !important; /* Equivalent to pl-32 */
+    font-size: 18px;
+}
+.header {
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    padding-top: 10px;
+}
+.hovertext:hover {
+        color: #FFD54F; /* Changes color */
+        font-size: 1.1rem; /* Increases font size */
+        text-shadow: 2px 2px #333; /* Adds a shadow */
+}
+
+#logoImage {
+    height: 100px; /* Larger height for the logo initially */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.scrolled #logoImage {
+    opacity: 0; /* Fade out logo on scroll */
+}
+
+header.scrolled {
+    background-color: #333;
+    box-shadow: 0 4px 8px #D7915A; /* Add shadow on scroll */
+}
+
+/* Dropdown visibility on hover */
+.relative:hover .dropdown-content {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-content {
+    text-align: left;
+    color: #000;
+    display: block; /* Stability */
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Invisible by default */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Navigation arrow buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+.main-text{
+    padding-top: 15rem;
+    padding-bottom: 4rem;
+}
+.menu-cover{
+    background-color: #f4efe3;
+    background-image: url('https://mamounia.com/bundles/apiciuswebsite/images/contemporain-extralight.svg');
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+.menu-title{
+    color: #781924;
+    font-family: "Cochin" ;
+    font-style: italic;
+}
+.image-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+
+.image-container:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect when hovered */
+}
+
+/* See More Blogs Button Container */
+.see-more-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Adds some space between the slider and the button */
+}
+
+/* See More Blogs Button */
+.see-more-btn {
+  background-color: rgb(208 181 129) ;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.see-more-btn:hover {
+  background-color: rgb(255 237 213 );
+}
+
+
+.gift-card-container {
+    color: #d0b581;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  
+}
+
+.gift-cards-section {
+  
+    margin: 0 auto;
+    width:800px;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color:#f4efe3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+.text-container{
+    padding-top: 1rem;
+    font-size: 25px;
+}
+.action-btn{
+margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(208 181 129);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.gift-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: card-inclined-movement 2s linear infinite; /* Linear inclined animation */
+  transform-origin: center; /* Sets the pivot point for transformations */
+  transition: transform 200ms ease-in-out; /* Smooth transformation */
+}
+
+.gift-card-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+
+/* Inclined Animation */
+@keyframes card-inclined-movement {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(41deg) skewX(-18deg) skewY(-12deg) translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: rotateX(2deg) rotateY(1deg) rotateZ(41deg) skewX(-18deg) skewY(-12deg) translateX(20px) translateY(10px);
+  }
+  50% {
+    transform: rotateX(4deg) rotateY(2deg) rotateZ(41deg) skewX(-18deg) skewY(-12deg) translateX(40px) translateY(20px);
+  }
+  75% {
+    transform: rotateX(2deg) rotateY(1deg) rotateZ(41deg) skewX(-18deg) skewY(-12deg) translateX(20px) translateY(10px);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(41deg) skewX(-18deg) skewY(-12deg) translateX(0px) translateY(0px);
+  }
+}
+
+.footer {
+  background: #333; /* Moroccan red */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* Push footer to the bottom of the page */
+  width: 100%; /* Ensure footer spans full width */
+}
+.social-media {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center align the icons */
+    align-items: center; /* Vertically align icons */
+    gap: 1.5rem; /* Space between each icon */
+    padding: 1rem; /* Add spacing around the container */
+  }
+
+
+/* Sliding doors styles */
+.door {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%; /* Two panels cover the screen */
+  background: #E78151;
+  z-index: 1000;
+  transition: transform 1s ease-in-out;
+}
+
+.door.left {
+  left: 0;
+  transform: translateX(0); /* Initially in view */
+}
+
+.door.right {
+  right: 0;
+  transform: translateX(0); /* Initially in view */
+}
+
+.door.open.left {
+  transform: translateX(-100%); /* Slides out of view */
+}
+
+.door.open.right {
+  transform: translateX(100%); /* Slides out of view */
+}
+
+/* Welcome page styles */
+.welcome-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1001; /* Above the doors */
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  transition: opacity 1s ease-in-out;
+}
+
+.logo-container img {
+  max-width: 200px;
+}
+
+.blog-name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Hidden content */
+.hidden {
+  display: none; /* Hide elements after animation */
+}
